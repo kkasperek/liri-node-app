@@ -42,6 +42,20 @@ concertThis(command);
 
 //---------------------------------------------------------------------------
 //2.) node liri.js spotify-this-song '<song name here>'
+/** Artist(s)
+     * The song's name
+     * A preview link of the song from Spotify
+     * The album that the song is from
+   * If no song is provided then your program will default to "The Sign" by Ace of Base.*/
+
+
+
+//   data.tracks.item[0].album.name
+//   is name of the album
+  
+//   data.tracks.item[0].artists
+//   is the array fof artists
+//   data.tracks.item[0].name is the name of song
 
 //---------------------------------------------------------------------------
 //3.) node liri.js movie-this '<movie name here>'
@@ -52,6 +66,7 @@ request(queryURL, function (error, response, body) {
     if (error) console.log(error);
 
     let JSONResponse = JSON.parse(body);
+    // add if.. else statement to loop through undefined properties 
     console.log('Movie Title: ' + JSONResponse.Title +
         '\n Year: ' + JSONResponse.Year +
         '\n IMDB Rating: ' + JSONResponse.imdbRating +
@@ -78,3 +93,9 @@ fs.readFile("random.txt", "utf8", function (error, data) {
 
 });
 //---------------------------------------------------------------------------
+
+
+/* PSEUDO-CODE */
+// create a switch statement with the commands as the conditions 
+// if the comand is called (i.e. do-what-it-says, movie-this) then run the switch statement that correlates
+// 
